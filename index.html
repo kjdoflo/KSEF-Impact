@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>KSTC Client Impact Report · FY2020–2025</title>
+<title>Win in KY · Kentucky Science and Engineering Foundation</title>
 <style>
   :root{
     --navy:#0D2340;
@@ -16,6 +16,8 @@
     --ink-soft:#5B6472;
     --line:#DCD5C4;
     --card:#FFFFFF;
+    --amber-bg:#FBF0DD;
+    --amber-line:#E7CE9C;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -31,7 +33,7 @@
   header.hero{
     background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
     color:#F2EFE6;
-    padding:64px 32px 56px;
+    padding:64px 32px 40px;
     position:relative;
     overflow:hidden;
   }
@@ -47,13 +49,14 @@
     color:var(--gold-bright); font-weight:700; margin:0 0 14px;
   }
   h1.title{
-    font-size:44px; line-height:1.12; margin:0 0 18px; max-width:760px;
+    font-size:42px; line-height:1.14; margin:0 0 18px; max-width:760px;
     font-weight:500; letter-spacing:-0.01em;
   }
   .hero-sub{
     font-family:'Helvetica Neue',Arial,sans-serif;
-    color:#C9D2DE; font-size:16px; max-width:600px; line-height:1.6; margin:0 0 36px;
+    color:#C9D2DE; font-size:16px; max-width:660px; line-height:1.65; margin:0 0 36px;
   }
+  .hero-sub b{color:#F2EFE6;}
   .hero-stats{
     display:flex; gap:0; flex-wrap:wrap;
     border-top:1px solid rgba(255,255,255,0.14);
@@ -65,21 +68,32 @@
     border-right:1px solid rgba(255,255,255,0.14);
   }
   .hstat:last-child{border-right:none;}
-  .hstat .num{font-size:32px; font-weight:600; color:#fff;}
-  .hstat .num span.unit{font-size:16px; color:var(--gold-bright); font-weight:500;}
+  .hstat .num{font-size:30px; font-weight:600; color:#fff;}
+  .hstat .num span.unit{font-size:15px; color:var(--gold-bright); font-weight:500;}
   .hstat .lbl{font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; color:#AEB9C8; margin-top:4px; line-height:1.4;}
 
-  section{padding:56px 0 0;}
-  section:first-of-type{padding-top:56px;}
+  .hero-chart-card{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14);
+    border-radius:8px; padding:18px 20px 8px; margin-top:28px;
+  }
+  .hero-chart-card .htitle{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--gold-bright); font-weight:700; margin-bottom:10px;
+  }
+  .hero-chart-box{position:relative; height:150px;}
+
+  section{padding:52px 0 0;}
+  section:first-of-type{padding-top:52px;}
   .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:6px; flex-wrap:wrap;}
   .kicker{
     font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase;
     letter-spacing:0.14em; font-size:11.5px; color:var(--bluegrass); font-weight:700;
   }
-  h2{font-size:26px; margin:4px 0 8px; font-weight:500; color:var(--navy);}
+  h2{font-size:25px; margin:4px 0 8px; font-weight:500; color:var(--navy);}
+  h3.sub-title{font-size:18px; margin:26px 0 4px; font-weight:600; color:var(--navy);}
   p.lede{
     font-family:'Helvetica Neue',Arial,sans-serif; color:var(--ink-soft);
-    font-size:15px; max-width:680px; line-height:1.65; margin:0 0 24px;
+    font-size:15px; max-width:680px; line-height:1.65; margin:0 0 22px;
   }
   .callout{
     display:inline-block; background:#EFE7D2; border:1px solid var(--line);
@@ -88,19 +102,40 @@
     margin:0 0 22px;
   }
   .callout b{color:var(--navy); font-weight:700;}
+  .callout.green{border-left-color:var(--bluegrass);}
+
+  .barrier-box{
+    background:var(--amber-bg); border:1px solid var(--amber-line);
+    border-radius:8px; padding:24px 28px; margin-bottom:16px;
+  }
+  .barrier-box h3{margin-top:0; font-size:18px; color:#8A5A1E;}
+  .barrier-list{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:14px; color:var(--ink);
+    line-height:1.7; margin:0; padding-left:20px;
+  }
+  .barrier-list li{margin-bottom:6px;}
+  .resolve-line{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:14px; color:var(--navy);
+    background:#fff; border:1px solid var(--amber-line); border-radius:6px;
+    padding:12px 16px; margin-top:14px;
+  }
 
   .card{
     background:var(--card); border:1px solid var(--line); border-radius:6px;
     padding:26px 28px 18px; margin-bottom:14px;
   }
   .grid2{display:grid; grid-template-columns:1.3fr 1fr; gap:20px;}
-  .chart-box{position:relative; height:320px;}
-  .chart-box.tall{height:360px;}
-  .chart-box.short{height:260px;}
+  .chart-box{position:relative; height:340px;}
+  .chart-box.tall{height:380px;}
+  .chart-box.short{height:280px;}
 
   .note{
     font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; color:var(--ink-soft);
     border-top:1px dashed var(--line); padding-top:10px; margin-top:14px; line-height:1.6;
+  }
+  .source-note{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:12px; color:var(--ink-soft);
+    font-style:italic; margin:10px 0 0;
   }
 
   .stat-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px;}
@@ -110,19 +145,174 @@
   }
   .stat-card .n{font-size:30px; font-weight:600; color:var(--navy);}
   .stat-card .n.green{color:var(--bluegrass);}
+  .stat-card .n.gold{color:#8A6D2A;}
   .stat-card .l{font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; color:var(--ink-soft); margin-top:4px; line-height:1.4;}
 
-  .consultants{display:flex; flex-direction:column; gap:10px;}
-  .cbar-row{display:grid; grid-template-columns:150px 1fr 46px; align-items:center; gap:10px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px;}
-  .cbar-track{background:#EFEAE0; border-radius:3px; height:14px; overflow:hidden;}
-  .cbar-fill{background:linear-gradient(90deg,var(--bluegrass),var(--bluegrass-bright)); height:100%; border-radius:3px;}
-  .cbar-val{text-align:right; color:var(--ink-soft);}
+  .momentum-section{
+    background:linear-gradient(160deg,#12331F 0%,#0D2340 100%);
+    color:#F2EFE6; border-radius:10px; padding:36px 36px 30px; margin-top:12px;
+  }
+  .momentum-section .kicker{color:var(--gold-bright);}
+  .momentum-section h2{color:#fff;}
+  .momentum-section p.lede{color:#CBD4DE;}
+  .momentum-stats{display:flex; gap:14px; flex-wrap:wrap; margin:20px 0 6px;}
+  .mstat{
+    flex:1; min-width:170px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    border-radius:8px; padding:16px 18px;
+  }
+  .mstat .n{font-size:28px; font-weight:600; color:#fff;}
+  .mstat .l{font-family:'Helvetica Neue',Arial,sans-serif; font-size:12.5px; color:#B9C3D1; margin-top:4px; line-height:1.4;}
+  .momentum-section .note{border-top-color:rgba(255,255,255,0.2); color:#AEB9C8;}
 
   footer{
     font-family:'Helvetica Neue',Arial,sans-serif; color:var(--ink-soft); font-size:12px;
     text-align:center; padding:40px 0 0; border-top:1px solid var(--line); margin-top:50px;
   }
 </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap" style="padding:0;">
+    <p class="eyebrow">Kentucky Science and Engineering Foundation · Win in KY Initiative</p>
+    <h1 class="title">Win in KY: growing federal R&amp;D awards for Kentucky innovators</h1>
+    <p class="hero-sub sans">The Kentucky Science and Engineering Foundation's <b>Win in KY</b> initiative connects Kentucky companies with federal funding — from first introductions through proposal writing — with a growing focus on helping more Kentucky businesses compete for Department of Defense / Department of War (DoD/DOW) awards, alongside continued broad-based support across every sector.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="num">4,503</div><div class="lbl">Total consultations logged, 2020–2025</div></div>
+      <div class="hstat"><div class="num">270</div><div class="lbl">Kentucky companies served in 2025 alone</div></div>
+      <div class="hstat"><div class="num">111</div><div class="lbl">Phase I SBIR/STTR awards won by KY companies, 2020–2025</div></div>
+      <div class="hstat"><div class="num">74<span class="unit">%</span></div><div class="lbl">of awarded companies had a prior KSEF consultation</div></div>
+    </div>
+    <div class="hero-chart-card">
+      <div class="htitle">Kentucky Phase I SBIR/STTR Awards by Year</div>
+      <div class="hero-chart-box"><canvas id="chartHeroPhase1"></canvas></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="section-head">
+      <div>
+        <p class="kicker">2025 in context</p>
+        <h2>Real federal headwinds shaped last year</h2>
+      </div>
+    </div>
+    <div class="barrier-box">
+      <h3>Barriers Kentucky innovators faced in 2025</h3>
+      <ul class="barrier-list">
+        <li><b>Policy and leadership transitions</b> under the new federal administration brought a wave of executive orders affecting agency priorities and grant review processes.</li>
+        <li><b>Federal budget uncertainty and agency funding freezes</b> slowed the pace of new solicitations and award decisions across multiple agencies.</li>
+        <li><b>A 43-day federal government shutdown</b> in late 2025 further delayed proposal reviews and funding actions.</li>
+        <li><b>A roughly six-month lapse in SBIR/STTR statutory authority</b>, after Congress let the programs' authorization expire on September 30, 2025 — the mechanism behind the majority of the awards tracked in this report. Agencies could not issue new SBIR/STTR solicitations or awards for the remainder of the year. Congress passed a five-year reauthorization in March 2026.</li>
+      </ul>
+      <div class="resolve-line">Despite these headwinds, KSEF and the Win in KY initiative kept working with Kentucky companies throughout 2025 — and, as the data below shows, momentum has already picked back up in 2026.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <p class="kicker">Consultation volume</p>
+        <h2>2024 was the most active consulting year</h2>
+      </div>
+    </div>
+    <p class="lede">Consultation counts rose every year from 2020 through 2024. The dip in 2025 lines up with the federal headwinds above — fewer active solicitations and funding freezes meant fewer proposal-related consultations — while the number of distinct companies served kept climbing.</p>
+    <div class="callout">📈 <b>Most active consulting year: 2024</b>, with 1,447 logged consultations across 252 companies.</div>
+    <div class="card">
+      <div class="chart-box tall"><canvas id="chartVolume"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <p class="kicker">Service mix</p>
+        <h2>What kind of help clients are getting has shifted over time</h2>
+      </div>
+    </div>
+    <p class="lede">Early years leaned on introductions and technical assistance. As the program matured, proposal writing assistance and solicitation matching became the dominant services — direct, hands-on help getting clients in front of funding.</p>
+    <div class="card">
+      <div class="chart-box tall"><canvas id="chartTypesZoom"></canvas></div>
+      <div class="note">"Other" includes Readiness Assessment, Seed Fund Strategy, Matching Fund, Vertx, and Circle Back consult types, each too small to chart individually.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <p class="kicker">Reach</p>
+        <h2>The client base has grown every year</h2>
+      </div>
+    </div>
+    <p class="lede">Unique companies served has grown every single year since 2020, including through the 2025 headwinds — direct evidence that KSEF's reach kept expanding even as the funding environment got harder.</p>
+    <div class="card">
+      <div class="chart-box short"><canvas id="chartUnique"></canvas></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div>
+        <p class="kicker">Award outcomes · Kentucky, all agencies</p>
+        <h2>Diving into the award data</h2>
+      </div>
+    </div>
+    <p class="lede">The following charts use Kentucky-specific award records downloaded directly from SBIR.gov, the U.S. Small Business Administration's official award database, giving a fuller and more current view of Phase I SBIR/STTR outcomes than KSEF's internal tracker alone.</p>
+
+    <h3 class="sub-title">Phase I awards per year — all agencies</h3>
+    <div class="card">
+      <div class="chart-box short"><canvas id="chartAwardsAllYear"></canvas></div>
+    </div>
+
+    <h3 class="sub-title">Phase I awards per year — DoD/DOW only</h3>
+    <p class="lede" style="margin-top:6px;">The Department of Defense (redesignated the Department of War in 2025) is Kentucky's second-largest SBIR/STTR funder after HHS/NIH. Growing this pipeline is a core focus of Win in KY.</p>
+    <div class="card">
+      <div class="chart-box short"><canvas id="chartAwardsDodYear"></canvas></div>
+    </div>
+
+    <h3 class="sub-title">Total award dollars per year — all agencies</h3>
+    <div class="card">
+      <div class="chart-box short"><canvas id="chartDollarsAllYear"></canvas></div>
+    </div>
+
+    <h3 class="sub-title">Total award dollars per year — DoD/DOW only</h3>
+    <div class="card">
+      <div class="chart-box short"><canvas id="chartDollarsDodYear"></canvas></div>
+      <div class="note">2025 figures for both charts above are likely undercounted: SBIR.gov award data typically lags several months behind actual agency activity, and the 2025 SBIR/STTR authorization lapse (see Barriers, above) paused new awards for the last quarter of the year.</div>
+    </div>
+
+    <h3 class="sub-title">Phase I awards by agency</h3>
+    <div class="grid2">
+      <div class="card">
+        <div class="chart-box short"><canvas id="chartAgencyPie"></canvas></div>
+        <div class="note">"Other" combines NASA, Department of Commerce, and EPA (2, 1, and 1 awards respectively).</div>
+      </div>
+      <div class="card">
+        <div class="chart-box short"><canvas id="chartDodBranch"></canvas></div>
+        <div class="note">"Other DoD" combines DARPA, DTRA, the Missile Defense Agency, and the Defense Health Agency (1 award each).</div>
+      </div>
+    </div>
+    <p class="source-note">Award data source: U.S. Small Business Administration, SBIR.gov award database, Kentucky-based recipients, Phase I awards, as reported by participating federal agencies to SBA.</p>
+  </section>
+
+  <section>
+    <div class="momentum-section">
+      <p class="kicker">So far in 2026</p>
+      <h2>Momentum is already building back</h2>
+      <p class="lede">With SBIR/STTR authority restored in March 2026, Win in KY has moved quickly. In the first five months of 2026 alone, the initiative logged 164 consultations tagged directly to Win in KY, spanning 40 Kentucky companies — a strong early pace for a program still in its first year, and a clear sign that the pause in 2025 was a delay, not a setback.</p>
+      <div class="momentum-stats">
+        <div class="mstat"><div class="n">164</div><div class="l">Win in KY consultations logged, Feb–June 2026</div></div>
+        <div class="mstat"><div class="n">40</div><div class="l">Kentucky companies engaged through Win in KY so far in 2026</div></div>
+      </div>
+      <div class="note">Figures reflect Win in KY–tagged consultations only, from the initiative's dedicated 2026 tracking log, and do not represent KSEF's total consultation volume for the year.</div>
+    </div>
+  </section>
+
+  <footer>Kentucky Science and Engineering Foundation · Win in KY Initiative</footer>
+</div>
+
 <script>
 /*!
  * Chart.js v4.4.4
@@ -140,146 +330,42 @@
 //# sourceMappingURL=chart.umd.js.map
 
 </script>
-</head>
-<body>
-
-<header class="hero">
-  <div class="wrap" style="padding:0;">
-    <p class="eyebrow">KSTC · Client Consultation &amp; Award Outcomes</p>
-    <h1 class="title">Six years of consultations, turned into wins for Kentucky innovators</h1>
-    <p class="hero-sub sans">A look at consultation volume, defense-sector engagement, and award outcomes across the 2020–2025 program years, drawn from the consultation logs and the company awards tracker.</p>
-    <div class="hero-stats">
-      <div class="hstat"><div class="num">4,503</div><div class="lbl">Total consultations logged, 2020–2025</div></div>
-      <div class="hstat"><div class="num">270</div><div class="lbl">Unique companies served in 2025 alone</div></div>
-      <div class="hstat"><div class="num">28<span class="unit">/38</span></div><div class="lbl">Awarded companies with a prior KSTC consultation</div></div>
-      <div class="hstat"><div class="num">49</div><div class="lbl">Identifiable federal award numbers in the awards tracker</div></div>
-    </div>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Consultation volume</p>
-        <h2>2024 was the most active consulting year</h2>
-      </div>
-    </div>
-    <p class="lede">Consultation counts rose every year from 2020 through 2024, then eased slightly in 2025 even as the number of distinct companies served kept climbing &mdash; a sign that consultations per client are normalizing after a period of rapid growth.</p>
-    <div class="callout">📈 <b>Most successful year for consultations: 2024</b>, with 1,447 logged consultations across 252 companies — an 85× increase over 2020's 17 consultations.</div>
-    <div class="card">
-      <div class="chart-box tall"><canvas id="chartVolume"></canvas></div>
-      <div class="note">Source: Consults-2020.csv through Consults-2025.csv. Counts reflect logged interaction rows per calendar year; a single company may have multiple consultations in a year.</div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Reach</p>
-        <h2>Client base has grown every year</h2>
-      </div>
-    </div>
-    <p class="lede">Unique companies engaged has grown faster than total consultations in recent years, meaning KSTC is reaching a wider base of Kentucky companies rather than concentrating time on fewer clients.</p>
-    <div class="card">
-      <div class="chart-box short"><canvas id="chartUnique"></canvas></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Defense-sector engagement</p>
-        <h2>DoD / DOW-flagged consultations peaked in 2024</h2>
-      </div>
-    </div>
-    <p class="lede">The consult log only tags a specific funding solicitation (like a DoD/Department of War SBIR cycle) starting in 2024, so earlier years show no tagged DoD consultations even though defense-related work may have occurred under a general "Technical Assistance" or "Solicitation Matching" label.</p>
-    <div class="callout">🎯 <b>Most successful year for DoD/DOW-flagged consultations: 2024</b>, with 16 consultations explicitly tied to a DoD/DOW solicitation cycle, versus 2 in 2025.</div>
-    <div class="grid2">
-      <div class="card">
-        <div class="chart-box short"><canvas id="chartDod"></canvas></div>
-        <div class="note">Source: "Funding Opportunities" field in the consult logs, filtered for entries mentioning "DoD" (the Department of Defense, redesignated the Department of War in 2025). Only 2024–2025 records use this field consistently, so this likely understates earlier defense-related activity.</div>
-      </div>
-      <div class="card">
-        <div class="chart-box short"><canvas id="chartDodAgency"></canvas></div>
-        <div class="note">Source: Award numbers in COMPANY-Awards.csv, classified by contract-number prefix (Navy, Air Force, Army, DTRA).</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Award outcomes</p>
-        <h2>Awards cluster around 2023 &mdash; and NIH leads the portfolio</h2>
-      </div>
-    </div>
-    <p class="lede">The awards tracker isn't a full historical ledger — it's a current snapshot of active award recipients, so most entries reflect awards received in 2023–2024. Even so, it shows a healthy, diversified pipeline of 49 identifiable federal awards across 38 Kentucky companies.</p>
-    <div class="callout">🏆 <b>Most successful year for awards (of those with a stated year): 2023</b>, with 18 of the 20 dated awards received that year.</div>
-    <div class="grid2">
-      <div class="card">
-        <div class="chart-box short"><canvas id="chartAgency"></canvas></div>
-        <div class="note">NIH (HHS) leads with 21 awards, followed by DoD (10 across Air Force, Navy, Army &amp; DTRA), DOE (9), and USDA (8).</div>
-      </div>
-      <div class="card">
-        <div class="chart-box short"><canvas id="chartAwardYear"></canvas></div>
-        <div class="note">Only 20 of 38 awarded companies have a parsable award year in the "Awards Received" field; the rest list only an award/contract number.</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Consulting-to-award pipeline</p>
-        <h2>Consultations show up in real award wins</h2>
-      </div>
-    </div>
-    <p class="lede">Cross-referencing the awards tracker against every consult log shows most award recipients came through KSTC's consulting pipeline at some point &mdash; direct evidence the program is converting hands-on assistance into funded projects.</p>
-    <div class="stat-row">
-      <div class="stat-card"><div class="n green">74%</div><div class="l">of awarded companies (28 of 38) had at least one logged KSTC consultation</div></div>
-      <div class="stat-card"><div class="n">4,503</div><div class="l">total consultations across all program years</div></div>
-      <div class="stat-card"><div class="n">847</div><div class="l">combined unique-company touches per year, 2020–2025 (a company active in multiple years is counted each year)</div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Service mix</p>
-        <h2>What kind of help clients are getting has shifted over time</h2>
-      </div>
-    </div>
-    <p class="lede">Early years leaned on introductions and technical assistance. As the program matured, proposal writing assistance and solicitation matching became the dominant services &mdash; direct, hands-on help getting clients in front of funding.</p>
-    <div class="card">
-      <div class="chart-box tall"><canvas id="chartTypes"></canvas></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <div>
-        <p class="kicker">Staff impact</p>
-        <h2>A small team is driving most of the client contact</h2>
-      </div>
-    </div>
-    <p class="lede">Five consultants account for the large majority of all logged consultations from 2020–2025.</p>
-    <div class="card">
-      <div class="consultants" id="consultantList"></div>
-    </div>
-  </section>
-
-  <footer>Prepared from Consults-2020–2025.csv and COMPANY-Awards.csv · KSTC internal report</footer>
-</div>
-
 <script>
-const NAVY = '#0D2340', GOLD = '#C8A24A', GREEN = '#3F7856', GREEN2='#5C9E77',
-      GOLD2 = '#E0B94F', SLATE='#8C93A0', RED='#B5654A';
 Chart.defaults.font.family = "'Helvetica Neue', Arial, sans-serif";
 Chart.defaults.color = '#5B6472';
 
+const NAVY = '#0D2340', GOLD = '#C8A24A', GREEN = '#3F7856', GREEN2='#5C9E77',
+      GOLD2 = '#E0B94F', SLATE='#8C93A0';
+// Okabe–Ito colorblind-safe categorical palette (used for the consult-type mix chart)
+const OI = ['#000000','#E69F00','#56B4E9','#009E73','#F0E442','#0072B2','#D55E00','#CC79A7','#999999'];
+
 const years = [2020,2021,2022,2023,2024,2025];
+const yearsZoom = [2023,2024,2025];
+
+function axisTitles(xText, yText, extraScaleOpts) {
+  return Object.assign({
+    x: { title: { display:true, text:xText, font:{weight:'600'} }, grid:{display:false} },
+    y: { title: { display:true, text:yText, font:{weight:'600'} }, beginAtZero:true, grid:{color:'#EDE7D8'} }
+  }, extraScaleOpts||{});
+}
+
+// Hero mini chart: Phase I awards by year (light theme for dark background)
+new Chart(document.getElementById('chartHeroPhase1'), {
+  type:'bar',
+  data:{labels:years, datasets:[{
+    data:[17,23,18,24,21,8],
+    backgroundColor: years.map(y => y===2023 ? GOLD2 : 'rgba(255,255,255,0.35)'),
+    borderRadius:3, maxBarThickness:34
+  }]},
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{legend:{display:false}, title:{display:false}},
+    scales:{
+      x:{ ticks:{color:'#C9D2DE'}, grid:{display:false} },
+      y:{ display:false, beginAtZero:true }
+    }
+  }
+});
 
 // 1. Volume by year
 new Chart(document.getElementById('chartVolume'), {
@@ -290,11 +376,43 @@ new Chart(document.getElementById('chartVolume'), {
     backgroundColor: years.map(y=> y===2024 ? GOLD : NAVY),
     borderRadius:4, maxBarThickness:60
   }]},
-  options:{plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.y.toLocaleString()+' consultations'}}},
-    scales:{y:{beginAtZero:true, grid:{color:'#EDE7D8'}}, x:{grid:{display:false}}}}
+  options:{
+    plugins:{
+      legend:{display:false},
+      title:{display:true, text:'Total KSEF Consultations by Year (2020–2025)', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}},
+      tooltip:{callbacks:{label:c=>c.parsed.y.toLocaleString()+' consultations'}}
+    },
+    scales: axisTitles('Year','Number of Consultations')
+  }
 });
 
-// 2. Unique companies
+// 2. Consult type mix, zoomed 2023-2025
+const typeDataZoom = {
+  "Technical Assistance": [453,365,148],
+  "Proposal Writing Assistance": [128,384,637],
+  "Solicitation Matching": [284,285,102],
+  "Micro Award": [71,121,189],
+  "Training": [62,217,19],
+  "Introduction": [108,99,78],
+  "Business Assistance": [29,69,92],
+  "Mentor Network": [20,13,15],
+  "Other": [38,179,25]
+};
+new Chart(document.getElementById('chartTypesZoom'), {
+  type:'bar',
+  data:{labels:yearsZoom, datasets:Object.keys(typeDataZoom).map((k,i)=>({
+    label:k, data:typeDataZoom[k], backgroundColor:OI[i%OI.length], stack:'s'
+  }))},
+  options:{
+    plugins:{
+      legend:{position:'bottom', labels:{boxWidth:12, padding:12, font:{size:11}}},
+      title:{display:true, text:'Consult Type Mix by Year, 2023–2025', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}}
+    },
+    scales: axisTitles('Year','Number of Consultations', {y:{stacked:true, beginAtZero:true, grid:{color:'#EDE7D8'}}, x:{stacked:true, grid:{display:false}}})
+  }
+});
+
+// 3. Unique companies
 new Chart(document.getElementById('chartUnique'), {
   type:'line',
   data:{labels:years, datasets:[{
@@ -303,88 +421,107 @@ new Chart(document.getElementById('chartUnique'), {
     borderColor:GREEN, backgroundColor:'rgba(63,120,86,0.12)', fill:true, tension:0.35,
     pointBackgroundColor:GREEN, pointRadius:5
   }]},
-  options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, grid:{color:'#EDE7D8'}}, x:{grid:{display:false}}}}
+  options:{
+    plugins:{
+      legend:{display:false},
+      title:{display:true, text:'Unique Kentucky Companies Served by Year (2020–2025)', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}}
+    },
+    scales: axisTitles('Year','Number of Unique Companies')
+  }
 });
 
-// 3. DoD by year
-new Chart(document.getElementById('chartDod'), {
+// 4. Awards per year, all agencies
+new Chart(document.getElementById('chartAwardsAllYear'), {
   type:'bar',
   data:{labels:years, datasets:[{
-    label:'DoD/DOW-flagged consultations',
-    data:[0,0,0,0,16,2],
-    backgroundColor: years.map(y=> y===2024 ? GOLD : SLATE),
-    borderRadius:4, maxBarThickness:46
+    data:[17,23,18,24,21,8],
+    backgroundColor: years.map(y=> y===2023 ? GOLD : NAVY),
+    borderRadius:4, maxBarThickness:56
   }]},
-  options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{stepSize:4}, grid:{color:'#EDE7D8'}}, x:{grid:{display:false}}}}
+  options:{
+    plugins:{legend:{display:false}, title:{display:true, text:'Kentucky Phase I SBIR/STTR Awards by Year, All Agencies', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}}},
+    scales: axisTitles('Award Year','Number of Phase I Awards')
+  }
 });
 
-// 3b. DoD by branch
-new Chart(document.getElementById('chartDodAgency'), {
+// 4b. Awards per year, DOD only
+new Chart(document.getElementById('chartAwardsDodYear'), {
   type:'bar',
-  data:{labels:['Air Force','Navy','Army','DTRA'], datasets:[{
-    label:'DoD awards by branch',
-    data:[4,3,2,1],
-    backgroundColor:[NAVY,GOLD,GREEN,SLATE], borderRadius:4, maxBarThickness:46
+  data:{labels:years, datasets:[{
+    data:[8,5,6,6,5,4],
+    backgroundColor: NAVY,
+    borderRadius:4, maxBarThickness:56
   }]},
-  options:{indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{beginAtZero:true, ticks:{stepSize:1}, grid:{color:'#EDE7D8'}}, y:{grid:{display:false}}}}
+  options:{
+    plugins:{legend:{display:false}, title:{display:true, text:'Kentucky Phase I SBIR/STTR Awards by Year, DoD/DOW Only', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}}},
+    scales: axisTitles('Award Year','Number of DoD/DOW Phase I Awards')
+  }
 });
 
-// 4. Agency donut
-new Chart(document.getElementById('chartAgency'), {
+// 5. Dollars per year, all agencies
+new Chart(document.getElementById('chartDollarsAllYear'), {
+  type:'bar',
+  data:{labels:years, datasets:[{
+    data:[2590977,5480924,4120511,5743184,5106749,2321154],
+    backgroundColor: GOLD,
+    borderRadius:4, maxBarThickness:56
+  }]},
+  options:{
+    plugins:{
+      legend:{display:false},
+      title:{display:true, text:'Total Phase I Award Dollars by Year, All Agencies', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}},
+      tooltip:{callbacks:{label:c=>'$'+c.parsed.y.toLocaleString()}}
+    },
+    scales: axisTitles('Award Year','Total Award Amount ($)', {y:{beginAtZero:true, grid:{color:'#EDE7D8'}, ticks:{callback:v=>'$'+(v/1e6).toFixed(1)+'M'}}})
+  }
+});
+
+// 5b. Dollars per year, DOD only
+new Chart(document.getElementById('chartDollarsDodYear'), {
+  type:'bar',
+  data:{labels:years, datasets:[{
+    data:[749670,690273,789756,744723,719692,668491],
+    backgroundColor: GREEN,
+    borderRadius:4, maxBarThickness:56
+  }]},
+  options:{
+    plugins:{
+      legend:{display:false},
+      title:{display:true, text:'Total Phase I Award Dollars by Year, DoD/DOW Only', font:{size:15, weight:'600'}, color:NAVY, padding:{bottom:16}},
+      tooltip:{callbacks:{label:c=>'$'+c.parsed.y.toLocaleString()}}
+    },
+    scales: axisTitles('Award Year','Total Award Amount ($)', {y:{beginAtZero:true, grid:{color:'#EDE7D8'}, ticks:{callback:v=>'$'+(v/1e3).toFixed(0)+'K'}}})
+  }
+});
+
+// 6. Agency pie
+new Chart(document.getElementById('chartAgencyPie'), {
   type:'doughnut',
-  data:{labels:['NIH (HHS)','DoD (all branches)','DOE','USDA','Other'],
-    datasets:[{data:[21,10,9,8,1], backgroundColor:[NAVY,GOLD,GREEN,GREEN2,SLATE], borderWidth:2, borderColor:'#fff'}]},
-  options:{plugins:{legend:{position:'bottom', labels:{boxWidth:12, padding:14}}}}
+  data:{labels:['HHS (NIH)','DoD/DOW','DOE','USDA','NSF','Other'],
+    datasets:[{data:[43,34,11,11,8,4], backgroundColor:[NAVY,GOLD,GREEN,GREEN2,'#7C8FAE',SLATE], borderWidth:2, borderColor:'#fff'}]},
+  options:{
+    plugins:{
+      legend:{position:'bottom', labels:{boxWidth:12, padding:14}},
+      title:{display:true, text:'Kentucky Phase I Awards by Federal Agency (2020–2025)', font:{size:14, weight:'600'}, color:NAVY, padding:{bottom:14}}
+    }
+  }
 });
 
-// 4b. Award year
-new Chart(document.getElementById('chartAwardYear'), {
+// 6b. DOD branch
+new Chart(document.getElementById('chartDodBranch'), {
   type:'bar',
-  data:{labels:['2023','2024'], datasets:[{
-    data:[18,2], backgroundColor:[GOLD,NAVY], borderRadius:4, maxBarThickness:70
+  data:{labels:['Air Force','Navy','Army','DLA','Other DoD'], datasets:[{
+    data:[15,9,4,2,4],
+    backgroundColor:[NAVY,GOLD,GREEN,GREEN2,SLATE], borderRadius:4, maxBarThickness:40
   }]},
-  options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, grid:{color:'#EDE7D8'}}, x:{grid:{display:false}}}}
-});
-
-// 5. Consult type stacked
-const typeData = {
-  "Technical Assistance": [1,5,229,453,365,148],
-  "Proposal Writing Assistance": [0,32,30,128,384,637],
-  "Solicitation Matching": [0,19,33,284,285,102],
-  "Micro Award": [0,21,69,71,121,189],
-  "Training": [0,2,6,62,217,19],
-  "Introduction": [16,51,48,108,99,78],
-  "Business Assistance": [0,2,7,29,69,92],
-  "Mentor Network": [0,2,46,20,13,15],
-  "Other": [0,2,8,38,179,25]
-};
-const palette = [NAVY,GOLD,GREEN,GREEN2,'#7C8FAE',GOLD2,'#A85C42',SLATE,'#4A5A70'];
-new Chart(document.getElementById('chartTypes'), {
-  type:'bar',
-  data:{labels:years, datasets:Object.keys(typeData).map((k,i)=>({
-    label:k, data:typeData[k], backgroundColor:palette[i%palette.length], stack:'s'
-  }))},
-  options:{plugins:{legend:{position:'bottom', labels:{boxWidth:12, padding:12, font:{size:11}}}},
-    scales:{y:{beginAtZero:true, stacked:true, grid:{color:'#EDE7D8'}}, x:{stacked:true, grid:{display:false}}}}
-});
-
-// Consultants list (manual bars for design control)
-const consultants = [
-  {name:'Kay Lee', n:1064},
-  {name:'Emilie Clemmens', n:400},
-  {name:'Alana Morgan', n:397},
-  {name:'Ellie Derbyshire', n:393},
-  {name:'Maria Labreveux', n:240},
-];
-const maxN = consultants[0].n;
-const listEl = document.getElementById('consultantList');
-consultants.forEach(c=>{
-  const row = document.createElement('div');
-  row.className='cbar-row';
-  row.innerHTML = `<div>${c.name}</div>
-    <div class="cbar-track"><div class="cbar-fill" style="width:${(c.n/maxN*100).toFixed(1)}%"></div></div>
-    <div class="cbar-val">${c.n.toLocaleString()}</div>`;
-  listEl.appendChild(row);
+  options:{
+    indexAxis:'y',
+    plugins:{legend:{display:false}, title:{display:true, text:'Kentucky Phase I Awards by DoD/DOW Branch (2020–2025)', font:{size:14, weight:'600'}, color:NAVY, padding:{bottom:14}}},
+    scales: {
+      x:{ title:{display:true, text:'Number of Phase I Awards', font:{weight:'600'}}, beginAtZero:true, grid:{color:'#EDE7D8'} },
+      y:{ title:{display:false}, grid:{display:false} }
+    }
+  }
 });
 </script>
 
